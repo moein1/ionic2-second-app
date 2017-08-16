@@ -41,14 +41,17 @@ export class ShoppingListService {
             })
     };
 
-    fetchList(token : string){
+    fetchList(token: string) {
         const userId = this.authService.getActiveUser().uid;
         return this.http.get('https://ionic2-recipe-book-5c56c.firebaseio.com/' +
             userId + '/shopping-list.json?auth=' + token).
-            map((response)=>{
+            map((response) => {
                 return response.json();
-            }).do((data)=>{
-                this.ingredients = data;
+            }).do((ingredients: Ingredient[]) => {
+                if (ingredients)
+                    this.ingredients = ingredients;
+                else
+                    this.ingredients = [];
             })
     }
 }
