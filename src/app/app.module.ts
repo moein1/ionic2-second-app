@@ -17,6 +17,9 @@ import { SigninPage } from "../pages/signin/signin";
 import { SignupPage } from "../pages/signup/signup";
 import { AuthService } from "../pages/services/auth";
 import { DatabaseOptionsPage } from "../pages/database-options/database-options";
+import { FavoritePage } from "../pages/favourite/favorite";
+import { FavoriteService } from "../pages/services/favorite";
+import { EditFavoritePage } from "../pages/edit-favorite/edit-favorite";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { DatabaseOptionsPage } from "../pages/database-options/database-options"
     EditRecipePage,
     SigninPage,
     SignupPage,
-    DatabaseOptionsPage
+    DatabaseOptionsPage,
+    FavoritePage,
+    EditFavoritePage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { DatabaseOptionsPage } from "../pages/database-options/database-options"
     EditRecipePage,
     SigninPage,
     SignupPage,
-    DatabaseOptionsPage
+    DatabaseOptionsPage,
+    FavoritePage,
+    EditFavoritePage
   ],
   providers: [
     StatusBar,
@@ -54,7 +61,8 @@ import { DatabaseOptionsPage } from "../pages/database-options/database-options"
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ShoppingListService,
     RecipeService,
-    AuthService
+    AuthService,
+    FavoriteService
   ]
 })
 export class AppModule {}

@@ -27,6 +27,7 @@ export class MyApp {
       authDomain: "ionic2-recipe-book-5c56c.firebaseapp.com"
     });
 
+    
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
         this.isAuthenticated = true;

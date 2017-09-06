@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Edit Favorite
+        </ion-title>    
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="favoriteForm"  (ngSubmit)="onSubmit()" >
+        <ion-list >
+           <ion-item>
+               <ion-label floating ></ion-label>
+               <ion-input formControlName="name"  type="text" required></ion-input>
+           </ion-item>
+           <ion-item>
+               <ion-label floating ></ion-label>
+               <ion-input formControlName="description" required></ion-input>
+           </ion-item>
+        </ion-list>
+        <button ion-button block [disabled]="!favoriteForm.valid" type="submit">Edit</button>
+    </form>
+</ion-content>
